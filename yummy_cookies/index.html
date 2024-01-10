@@ -3,16 +3,42 @@
     <h1>
        I LOVE COOKIES
     </h1>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.cookie = "cookie=oatmeal_raisin; path=/";
-        });
-    </script>
 </head>
 <body>
     <p><em>HELP!!!!</em> I really want to eat a yummy cookie, but all I have is an oatmeal raisin cookie and I frickin' <em>HATE</em> raisins.  Is there anyway I could change my oatmeal raisin to chocolate chip?</p>
 
-    <script></script>
+    <script>
+        document.cookie = "cookie=oatmeal_raisin; path=/";
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function printCookie() {
+            name = getCookie("cookie")
+            alert(name)
+        }
+
+        function checkCookie() {
+            let cookieType = getCookie("cookie");
+            if (cookieType == "chocolate_chip") {
+                alert("flag{om_nom_nom_yummy}");
+            } else {
+                
+            }
+        }
+    </script>
 
     <img src="eww.png" height="500"> <br>
     
