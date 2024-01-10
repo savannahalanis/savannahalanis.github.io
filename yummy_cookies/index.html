@@ -39,9 +39,19 @@
             }
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
+        /*document.addEventListener("DOMContentLoaded", function() {
             printCookie();
-        });
+        });*/
+
+        setEvent
+
+        setInterval(function() {
+            var currentCookieValue = getCookieValue();
+            if (currentCookieValue == "chocolate_chip") {
+                checkCookie()
+            }
+        }, 1000)
+
 
     </script>
 
